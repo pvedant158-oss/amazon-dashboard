@@ -12,14 +12,14 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f3;color:#1a1a1a;min-height:100vh}
 .header{background:#fff;border-bottom:1px solid #e5e5e5;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .header h1{font-size:17px;font-weight:600;letter-spacing:-0.01em}
-.header-right{display:flex;align-items:center;gap:10px}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .badge-tag{font-size:12px;color:#888;background:#f0f0ee;padding:4px 10px;border-radius:20px}
 #auth-btn{background:#1a1a1a;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit}
 #auth-btn:hover{background:#333}
-#auth-btn.connected{background:#e8f5e2;color:#2e6b12;cursor:default}
+#auth-btn.connected{background:#e8f5e2;color:#2e6b12;cursor:default;pointer-events:none}
 #sync-status{font-size:11px;color:#aaa}
 .container{max-width:1200px;margin:0 auto;padding:24px 32px}
-.tab-row{display:flex;gap:2px;margin-bottom:24px;background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:4px;width:fit-content}
+.tab-row{display:flex;gap:2px;margin-bottom:24px;background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:4px;width:fit-content;flex-wrap:wrap}
 .tab{padding:8px 20px;font-size:13px;font-weight:500;color:#888;cursor:pointer;border-radius:7px;border:none;background:none;font-family:inherit;transition:all 0.15s}
 .tab.active{background:#1a1a1a;color:#fff}
 .tab:hover:not(.active){background:#f5f5f3;color:#1a1a1a}
@@ -31,15 +31,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .metric-value{font-size:26px;font-weight:600;letter-spacing:-0.02em;color:#1a1a1a}
 .metric-sub{font-size:11px;color:#aaa;margin-top:4px}
 .charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.chart-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:20px}
+.chart-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:20px;margin-bottom:16px}
 .chart-title{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:16px}
 .status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
 .status-pill{border-radius:10px;padding:10px 14px;font-size:12px;display:flex;justify-content:space-between;align-items:center}
 .orders-wrap{background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;margin-bottom:12px}
-.filter-row{display:flex;gap:10px;margin-bottom:16px;align-items:center;flex-wrap:wrap}
-.filter-row input,.filter-row select{padding:8px 12px;border:1px solid #e5e5e5;border-radius:8px;font-size:13px;font-family:inherit;outline:none;background:#fff}
-.filter-row input{width:260px}.filter-row select{width:210px}
-.filter-row input:focus,.filter-row select:focus{border-color:#1a1a1a}
 table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
 thead th{background:#f9f9f7;padding:10px 14px;text-align:left;font-weight:600;color:#888;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid #e5e5e5}
 tbody td{padding:10px 14px;border-bottom:1px solid #f0f0f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#1a1a1a}
@@ -49,7 +45,7 @@ tbody tr:hover{background:#fafafa}
 .b-del{background:#e8f5e2;color:#2e6b12}.b-shp{background:#e3eef9;color:#1a4f8a}
 .b-pen{background:#fef3e2;color:#7a4b10}.b-can{background:#fde8e8;color:#8a2020}
 .b-ret{background:#edeafd;color:#42348a}
-.form-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:24px}
+.form-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:24px;margin-bottom:16px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-field{display:flex;flex-direction:column;gap:6px}
 .form-field.full{grid-column:1/-1}
@@ -61,20 +57,29 @@ tbody tr:hover{background:#fafafa}
 .btn-primary:disabled{background:#aaa;cursor:not-allowed}
 .btn-reset{background:#fff;color:#666;border:1px solid #e5e5e5;border-radius:8px;padding:10px 18px;font-size:13px;cursor:pointer;font-family:inherit}
 .btn-reset:hover{background:#f5f5f3}
-.submit-row{display:flex;gap:10px;margin-top:20px;align-items:center}
+.btn-danger{background:#fff;color:#8a2020;border:1px solid #f0c0c0;border-radius:8px;padding:6px 14px;font-size:12px;cursor:pointer;font-family:inherit}
+.btn-danger:hover{background:#fde8e8}
+.submit-row{display:flex;gap:10px;margin-top:20px;align-items:center;flex-wrap:wrap}
 .legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:12px;font-size:11px;color:#666}
 .legend span{display:flex;align-items:center;gap:5px}
 .legend-dot{width:9px;height:9px;border-radius:2px;display:inline-block}
-.toast{position:fixed;bottom:28px;right:28px;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:500;z-index:999;display:none;box-shadow:0 4px 20px rgba(0,0,0,0.12)}
+.toast{position:fixed;bottom:28px;right:28px;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:500;z-index:9999;display:none;box-shadow:0 4px 20px rgba(0,0,0,0.12);max-width:320px}
 .toast.success{background:#e8f5e2;color:#2e6b12}
 .toast.error{background:#fde8e8;color:#8a2020}
 .toast.info{background:#e3eef9;color:#1a4f8a}
 .orders-count{font-size:12px;color:#aaa;text-align:right;margin-top:6px}
-.sheet-link{font-size:12px;color:#185fa5;text-decoration:none;display:flex;align-items:center;gap:4px}
+.sheet-link{font-size:12px;color:#185fa5;text-decoration:none}
 .sheet-link:hover{text-decoration:underline}
 .loading-row td{text-align:center;color:#aaa;padding:24px!important}
-#refresh-btn{background:#fff;color:#555;border:1px solid #e5e5e5;border-radius:8px;padding:8px 14px;font-size:12px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px}
-#refresh-btn:hover{background:#f5f5f3}
+.icon-btn{background:#fff;color:#555;border:1px solid #e5e5e5;border-radius:8px;padding:8px 14px;font-size:12px;cursor:pointer;font-family:inherit}
+.icon-btn:hover{background:#f5f5f3}
+.product-table-wrap{background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;margin-bottom:16px}
+.prod-actions{display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:12px 16px;border-top:1px solid #f0f0f0}
+.filter-bar{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.filter-bar input,.filter-bar select{padding:8px 12px;border:1px solid #e5e5e5;border-radius:8px;font-size:13px;font-family:inherit;outline:none;background:#fff}
+.filter-bar input{width:250px}
+.filter-bar select{width:200px}
+.info-note{background:#e3eef9;border-radius:8px;padding:10px 14px;font-size:12px;color:#1a4f8a;margin-bottom:16px}
 </style>
 </head>
 <body>
@@ -82,7 +87,7 @@ tbody tr:hover{background:#fafafa}
 <div class="header">
   <h1>📦 Amazon Orders Dashboard</h1>
   <div class="header-right">
-    <a class="sheet-link" id="sheet-link" href="https://docs.google.com/spreadsheets/d/17ILdkcd9FypQYWiyUxE4Q0y8RFoD-H_I0MV_IxnicIc/edit" target="_blank">📄 Open Google Sheet</a>
+    <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/17ILdkcd9FypQYWiyUxE4Q0y8RFoD-H_I0MV_IxnicIc/edit" target="_blank">📄 Open Google Sheet</a>
     <span class="badge-tag">TRAIS · 2026</span>
     <span id="sync-status"></span>
     <button id="auth-btn" onclick="handleAuth()">🔗 Connect Google Sheets</button>
@@ -94,52 +99,25 @@ tbody tr:hover{background:#fafafa}
     <button class="tab active" onclick="switchTab('dashboard')">📊 Dashboard</button>
     <button class="tab" onclick="switchTab('orders')">📋 Orders</button>
     <button class="tab" onclick="switchTab('entry')">➕ New Order</button>
+    <button class="tab" onclick="switchTab('products')">📦 Products</button>
   </div>
 
   <!-- DASHBOARD -->
   <div id="panel-dashboard" class="panel active">
     <div class="section-title">Overview</div>
     <div class="metric-grid">
-      <div class="metric-card">
-        <div class="metric-label">🛒 Total orders</div>
-        <div class="metric-value" id="m-total">—</div>
-        <div class="metric-sub" id="m-range">Connect Sheets to load</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">₹ Total revenue</div>
-        <div class="metric-value" id="m-revenue">—</div>
-        <div class="metric-sub">Gross item price</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">✅ Delivered</div>
-        <div class="metric-value" id="m-delivered">—</div>
-        <div class="metric-sub" id="m-del-pct"></div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">❌ Cancelled</div>
-        <div class="metric-value" id="m-cancelled">—</div>
-        <div class="metric-sub" id="m-can-pct"></div>
-      </div>
+      <div class="metric-card"><div class="metric-label">🛒 Total orders</div><div class="metric-value" id="m-total">—</div><div class="metric-sub" id="m-range">Connect Sheets to load</div></div>
+      <div class="metric-card"><div class="metric-label">₹ Total revenue</div><div class="metric-value" id="m-revenue">—</div><div class="metric-sub">Gross item price</div></div>
+      <div class="metric-card"><div class="metric-label">✅ Delivered</div><div class="metric-value" id="m-delivered">—</div><div class="metric-sub" id="m-del-pct"></div></div>
+      <div class="metric-card"><div class="metric-label">❌ Cancelled</div><div class="metric-value" id="m-cancelled">—</div><div class="metric-sub" id="m-can-pct"></div></div>
     </div>
     <div class="section-title">Order status breakdown</div>
-    <div class="status-grid" id="status-grid">
-      <div class="status-pill" style="background:#f5f5f3"><span style="color:#aaa">Connect Google Sheets to load live data</span></div>
-    </div>
+    <div class="status-grid" id="status-grid"><div class="status-pill" style="background:#f5f5f3"><span style="color:#aaa">Connect Google Sheets to load live data</span></div></div>
     <div class="charts-row">
-      <div class="chart-card">
-        <div class="chart-title">Monthly revenue (₹)</div>
-        <div style="position:relative;height:200px"><canvas id="chart-monthly"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-title">Revenue by state (top 8)</div>
-        <div style="position:relative;height:200px"><canvas id="chart-states"></canvas></div>
-      </div>
+      <div class="chart-card"><div class="chart-title">Monthly revenue (₹)</div><div style="position:relative;height:200px"><canvas id="chart-monthly"></canvas></div></div>
+      <div class="chart-card"><div class="chart-title">Revenue by state (top 8)</div><div style="position:relative;height:200px"><canvas id="chart-states"></canvas></div></div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">Top SKUs by revenue</div>
-      <div class="legend" id="sku-legend"></div>
-      <div style="position:relative;height:200px"><canvas id="chart-sku"></canvas></div>
-    </div>
+    <div class="chart-card"><div class="chart-title">Top SKUs by revenue</div><div class="legend" id="sku-legend"></div><div style="position:relative;height:200px"><canvas id="chart-sku"></canvas></div></div>
   </div>
 
   <!-- ORDERS -->
@@ -147,8 +125,8 @@ tbody tr:hover{background:#fafafa}
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">
       <div class="section-title" style="margin:0">All orders</div>
       <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <button id="refresh-btn" onclick="loadFromSheets()">🔄 Refresh from Sheet</button>
-        <input type="text" placeholder="Search order ID, SKU, city..." id="filter-input" oninput="filterOrders()" style="width:250px;padding:8px 12px;border:1px solid #e5e5e5;border-radius:8px;font-size:13px;font-family:inherit;outline:none">
+        <button class="icon-btn" onclick="loadFromSheets()">🔄 Refresh</button>
+        <input type="text" placeholder="Search order ID, SKU, city…" id="filter-input" oninput="filterOrders()" style="padding:8px 12px;border:1px solid #e5e5e5;border-radius:8px;font-size:13px;font-family:inherit;outline:none;width:240px">
         <select id="filter-status" onchange="filterOrders()" style="padding:8px 12px;border:1px solid #e5e5e5;border-radius:8px;font-size:13px;font-family:inherit;outline:none;background:#fff;width:200px">
           <option value="">All statuses</option>
           <option>Shipped - Delivered to Buyer</option>
@@ -163,24 +141,26 @@ tbody tr:hover{background:#fafafa}
     <div class="orders-wrap">
       <table>
         <thead><tr>
-          <th style="width:170px">Order ID</th>
+          <th style="width:160px">Order ID</th>
           <th style="width:95px">Date</th>
           <th style="width:135px">Status</th>
-          <th style="width:120px">SKU</th>
+          <th style="width:160px">Item name</th>
+          <th style="width:110px">SKU</th>
           <th style="width:45px">Qty</th>
           <th style="width:80px">Price (₹)</th>
-          <th style="width:120px">City</th>
-          <th style="width:110px">State</th>
+          <th style="width:110px">City</th>
+          <th style="width:100px">State</th>
         </tr></thead>
-        <tbody id="orders-tbody"><tr class="loading-row"><td colspan="8">🔗 Connect Google Sheets to load orders</td></tr></tbody>
+        <tbody id="orders-tbody"><tr class="loading-row"><td colspan="9">🔗 Connect Google Sheets to load orders</td></tr></tbody>
       </table>
     </div>
     <div class="orders-count" id="orders-count"></div>
   </div>
 
-  <!-- ENTRY FORM -->
+  <!-- NEW ORDER ENTRY -->
   <div id="panel-entry" class="panel">
     <div class="section-title">New order entry</div>
+    <div class="info-note">ℹ️ SKU / ASIN dropdowns are populated from your <strong>Products</strong> tab. Add items there first.</div>
     <div class="form-card">
       <div class="form-grid">
         <div class="form-field"><label>Amazon Order ID *</label><input type="text" id="f-orderid" placeholder="e.g. 407-1234567-8901234"></div>
@@ -201,17 +181,13 @@ tbody tr:hover{background:#fafafa}
         <div class="form-field"><label>Ship service level</label>
           <select id="f-service"><option value="">Select</option><option>Standard</option><option>SecondDay</option><option>Expedited</option></select>
         </div>
-        <div class="form-field full"><label>SKU *</label>
-          <select id="f-sku">
-            <option value="">Select SKU</option>
-            <option>C3-KH3D-JZ2H</option><option>JN-CTZ4-BHDN</option><option>SX-0OXQ-W2PQ</option>
-            <option>YD-BL70-4VOM</option><option>86-P0TZ-FK3Q</option><option>ZF-0I0W-4Z59</option>
-            <option>YQ-J504-OMIR</option><option>IH-OSRB-DS6Y</option><option>L3-YAQA-XN56</option>
-            <option>4V-5LCD-9MR0</option><option>E6-1QP8-ASUL</option><option>H7-D7J7-NX0U</option>
-            <option>WG-B6X1-ZA1M</option><option>Other</option>
+        <div class="form-field full"><label>Product / Item name *</label>
+          <select id="f-product" onchange="onProductSelect()">
+            <option value="">— Select product (add in Products tab) —</option>
           </select>
         </div>
-        <div class="form-field"><label>ASIN</label><input type="text" id="f-asin" placeholder="e.g. B0GSMSKW32"></div>
+        <div class="form-field"><label>SKU *</label><input type="text" id="f-sku" placeholder="Auto-filled or type manually"></div>
+        <div class="form-field"><label>ASIN</label><input type="text" id="f-asin" placeholder="Auto-filled or type manually"></div>
         <div class="form-field"><label>Quantity *</label><input type="number" id="f-qty" min="1" value="1"></div>
         <div class="form-field"><label>Item price (₹) *</label><input type="number" id="f-price" min="0" step="0.01" placeholder="e.g. 185.00"></div>
         <div class="form-field"><label>Item tax (₹)</label><input type="number" id="f-tax" min="0" step="0.01" placeholder="e.g. 8.81"></div>
@@ -243,219 +219,340 @@ tbody tr:hover{background:#fafafa}
       </div>
     </div>
   </div>
+
+  <!-- PRODUCTS MASTER -->
+  <div id="panel-products" class="panel">
+    <div class="section-title">Products master list</div>
+    <div class="info-note">➕ Add your products here. SKU and ASIN will auto-populate in the New Order form when you select a product.</div>
+
+    <div class="form-card">
+      <div style="font-size:13px;font-weight:500;color:#1a1a1a;margin-bottom:14px">Add new product</div>
+      <div class="form-grid">
+        <div class="form-field full"><label>Item / Product name *</label><input type="text" id="p-name" placeholder="e.g. Wireless Bluetooth Earbuds"></div>
+        <div class="form-field"><label>SKU *</label><input type="text" id="p-sku" placeholder="e.g. C3-KH3D-JZ2H"></div>
+        <div class="form-field"><label>ASIN</label><input type="text" id="p-asin" placeholder="e.g. B0GSMSKW32"></div>
+        <div class="form-field"><label>MRP (₹)</label><input type="number" id="p-mrp" min="0" step="0.01" placeholder="e.g. 199.00"></div>
+        <div class="form-field"><label>Category</label><input type="text" id="p-category" placeholder="e.g. Electronics"></div>
+      </div>
+      <div class="submit-row">
+        <button class="btn-primary" id="add-product-btn" onclick="addProduct()">➕ Save product to Sheet</button>
+        <span id="prod-status" style="font-size:12px;color:#aaa"></span>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+      <div class="section-title" style="margin:0">Saved products</div>
+      <div style="display:flex;gap:8px">
+        <button class="icon-btn" onclick="loadProducts()">🔄 Refresh</button>
+        <input type="text" id="prod-filter" oninput="filterProducts()" placeholder="Search products…" style="padding:8px 12px;border:1px solid #e5e5e5;border-radius:8px;font-size:13px;font-family:inherit;outline:none;width:200px">
+      </div>
+    </div>
+
+    <div class="product-table-wrap">
+      <table>
+        <thead><tr>
+          <th style="width:220px">Item name</th>
+          <th style="width:130px">SKU</th>
+          <th style="width:130px">ASIN</th>
+          <th style="width:90px">MRP (₹)</th>
+          <th style="width:120px">Category</th>
+          <th style="width:70px">Action</th>
+        </tr></thead>
+        <tbody id="products-tbody"><tr class="loading-row"><td colspan="6">Connect Google Sheets to load products</td></tr></tbody>
+      </table>
+    </div>
+    <div class="orders-count" id="products-count"></div>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-const CLIENT_ID = '1080600114522-ap8ub40qpo2ljani72dljr8hgg8sdeif.apps.googleusercontent.com';
-  // Hosted at: https://pvedant158-oss.github.io/amazon-dashboard/amazon_orders_dashboard.html
-const SHEET_ID  = '17ILdkcd9FypQYWiyUxE4Q0y8RFoD-H_I0MV_IxnicIc';
-const SCOPES    = 'https://www.googleapis.com/auth/spreadsheets';
-const SHEET_NAME = 'Orders';
-const HEADERS = ['AMAZON-ORDER-ID','PURCHASE-DATE','ORDER-STATUS','SHIP-SERVICE-LEVEL','SKU','ASIN','QUANTITY','ITEM PRICE','ITEM TAX','SHIP-CITY','SHIP-STATUS','SHIP-POSTAL-CODE','FULFILLED-BY','IS-BUSINESS-ORDER','PROMOTION-DISCOUNT'];
+const CLIENT_ID  = '1080600114522-ap8ub40qpo2ljani72dljr8hgg8sdeif.apps.googleusercontent.com';
+const SHEET_ID   = '17ILdkcd9FypQYWiyUxE4Q0y8RFoD-H_I0MV_IxnicIc';
+const SCOPES     = 'https://www.googleapis.com/auth/spreadsheets';
+const ORDERS_SHEET   = 'Orders';
+const PRODUCTS_SHEET = 'Products';
+const ORDER_HEADERS  = ['AMAZON-ORDER-ID','PURCHASE-DATE','ORDER-STATUS','SHIP-SERVICE-LEVEL','ITEM-NAME','SKU','ASIN','QUANTITY','ITEM PRICE','ITEM TAX','SHIP-CITY','SHIP-STATUS','SHIP-POSTAL-CODE','FULFILLED-BY','IS-BUSINESS-ORDER','PROMOTION-DISCOUNT'];
+const PRODUCT_HEADERS = ['ITEM-NAME','SKU','ASIN','MRP','CATEGORY'];
 
-let tokenClient, accessToken = null, allOrders = [], displayOrders = [], charts = {};
+let tokenClient, accessToken=null, allOrders=[], displayOrders=[], allProducts=[], displayProducts=[], charts={};
+
+// ── AUTO RECONNECT on page load ───────────────────────
+window.addEventListener('load', ()=>{
+  const saved = sessionStorage.getItem('gauth_token');
+  if(saved){
+    accessToken = saved;
+    setConnected();
+    loadProducts().then(()=>loadFromSheets());
+  }
+});
 
 // ── Auth ──────────────────────────────────────────────
-function handleAuth() {
-  if (accessToken) return;
+function handleAuth(){
+  if(accessToken) return;
   tokenClient = google.accounts.oauth2.initTokenClient({
     client_id: CLIENT_ID,
     scope: SCOPES,
-    callback: async (resp) => {
-      if (resp.error) { showToast('Auth failed: ' + resp.error, 'error'); return; }
+    callback: async(resp)=>{
+      if(resp.error){ showToast('Auth failed: '+resp.error,'error'); return; }
       accessToken = resp.access_token;
-      document.getElementById('auth-btn').textContent = '✅ Connected';
-      document.getElementById('auth-btn').classList.add('connected');
-      document.getElementById('sync-status').textContent = 'Synced to Google Sheets';
-      showToast('Connected to Google Sheets!', 'success');
-      await ensureSheetExists();
+      sessionStorage.setItem('gauth_token', accessToken);
+      // Auto refresh token every 50 minutes
+      setTimeout(refreshToken, 50*60*1000);
+      setConnected();
+      await ensureSheets();
+      await loadProducts();
       await loadFromSheets();
     }
   });
-  tokenClient.requestAccessToken();
+  tokenClient.requestAccessToken({prompt:'consent'});
 }
 
-// ── Ensure sheet/headers exist ────────────────────────
-async function ensureSheetExists() {
-  // Get spreadsheet metadata
+function refreshToken(){
+  if(!tokenClient) return;
+  tokenClient = google.accounts.oauth2.initTokenClient({
+    client_id: CLIENT_ID, scope: SCOPES,
+    callback:(resp)=>{
+      if(!resp.error){
+        accessToken=resp.access_token;
+        sessionStorage.setItem('gauth_token',accessToken);
+        setTimeout(refreshToken,50*60*1000);
+      }
+    }
+  });
+  tokenClient.requestAccessToken({prompt:''});
+}
+
+function setConnected(){
+  document.getElementById('auth-btn').textContent='✅ Connected';
+  document.getElementById('auth-btn').classList.add('connected');
+  document.getElementById('sync-status').textContent='Synced · Google Sheets';
+}
+
+// ── Ensure sheets & headers ───────────────────────────
+async function ensureSheets(){
   const meta = await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}`);
-  const sheets = meta.sheets.map(s => s.properties.title);
-  if (!sheets.includes(SHEET_NAME)) {
-    // Add sheet
-    await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}:batchUpdate`, 'POST', {
-      requests: [{ addSheet: { properties: { title: SHEET_NAME } } }]
-    });
-  }
-  // Check if headers exist
-  const check = await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}!A1:O1`);
-  if (!check.values || check.values[0]?.[0] !== 'AMAZON-ORDER-ID') {
-    await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}!A1:O1?valueInputOption=RAW`, 'PUT', {
-      values: [HEADERS]
-    });
-  }
+  const existing = meta.sheets.map(s=>s.properties.title);
+  const toAdd = [];
+  if(!existing.includes(ORDERS_SHEET))   toAdd.push({addSheet:{properties:{title:ORDERS_SHEET}}});
+  if(!existing.includes(PRODUCTS_SHEET)) toAdd.push({addSheet:{properties:{title:PRODUCTS_SHEET}}});
+  if(toAdd.length) await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}:batchUpdate`,'POST',{requests:toAdd});
+  // Set headers
+  const oCheck = await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${ORDERS_SHEET}!A1`);
+  if(!oCheck.values) await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${ORDERS_SHEET}!A1:P1?valueInputOption=RAW`,'PUT',{values:[ORDER_HEADERS]});
+  const pCheck = await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${PRODUCTS_SHEET}!A1`);
+  if(!pCheck.values) await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${PRODUCTS_SHEET}!A1:E1?valueInputOption=RAW`,'PUT',{values:[PRODUCT_HEADERS]});
 }
 
-// ── Load from Sheets ──────────────────────────────────
-async function loadFromSheets() {
-  if (!accessToken) { showToast('Please connect Google Sheets first', 'info'); return; }
-  document.getElementById('orders-tbody').innerHTML = '<tr class="loading-row"><td colspan="8">⏳ Loading from Google Sheets…</td></tr>';
-  try {
-    const data = await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}!A:O`);
-    const rows = data.values || [];
-    if (rows.length <= 1) { allOrders = []; renderOrders([]); updateDashboard([]); return; }
-    const headers = rows[0];
-    allOrders = rows.slice(1).map(r => ({
-      id:     r[0] || '',
-      date:   r[1] || '',
-      status: r[2] || '',
-      service:r[3] || '',
-      sku:    r[4] || '',
-      asin:   r[5] || '',
-      qty:    parseInt(r[6]) || 0,
-      price:  parseFloat(r[7]) || 0,
-      tax:    parseFloat(r[8]) || 0,
-      city:   r[9] || '',
-      state:  r[10] || '',
-      postal: r[11] || '',
-      channel:r[12] || '',
-      biz:    r[13] || '',
-      promo:  parseFloat(r[14]) || 0,
+// ── Load Orders ───────────────────────────────────────
+async function loadFromSheets(){
+  if(!accessToken){ showToast('Please connect Google Sheets first','info'); return; }
+  document.getElementById('orders-tbody').innerHTML='<tr class="loading-row"><td colspan="9">⏳ Loading…</td></tr>';
+  try{
+    const data = await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${ORDERS_SHEET}!A:P`);
+    const rows = data.values||[];
+    if(rows.length<=1){ allOrders=[]; renderOrders([]); updateDashboard([]); return; }
+    allOrders = rows.slice(1).map(r=>({
+      id:r[0]||'',date:r[1]||'',status:r[2]||'',service:r[3]||'',
+      itemname:r[4]||'',sku:r[5]||'',asin:r[6]||'',
+      qty:parseInt(r[7])||0,price:parseFloat(r[8])||0,tax:parseFloat(r[9])||0,
+      city:r[10]||'',state:r[11]||'',postal:r[12]||'',
+      channel:r[13]||'',biz:r[14]||'',promo:parseFloat(r[15])||0
     }));
-    displayOrders = [...allOrders];
+    displayOrders=[...allOrders];
     renderOrders(displayOrders);
     updateDashboard(allOrders);
-    document.getElementById('sync-status').textContent = `Last synced: ${new Date().toLocaleTimeString()}`;
-    showToast(`Loaded ${allOrders.length} orders from Google Sheets`, 'success');
-  } catch(e) {
-    showToast('Error loading from Sheet: ' + e.message, 'error');
+    document.getElementById('sync-status').textContent=`Synced · ${new Date().toLocaleTimeString()}`;
+    showToast(`Loaded ${allOrders.length} orders`,'success');
+  }catch(e){ showToast('Error: '+e.message,'error'); }
+}
+
+// ── Load Products ─────────────────────────────────────
+async function loadProducts(){
+  if(!accessToken) return;
+  try{
+    const data = await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${PRODUCTS_SHEET}!A:E`);
+    const rows = data.values||[];
+    allProducts = rows.length<=1 ? [] : rows.slice(1).map(r=>({
+      name:r[0]||'',sku:r[1]||'',asin:r[2]||'',mrp:r[3]||'',category:r[4]||''
+    }));
+    displayProducts=[...allProducts];
+    renderProducts(displayProducts);
+    populateProductDropdown();
+  }catch(e){ console.error(e); }
+}
+
+// ── Product dropdown in New Order form ────────────────
+function populateProductDropdown(){
+  const sel = document.getElementById('f-product');
+  sel.innerHTML = '<option value="">— Select product —</option>';
+  allProducts.forEach((p,i)=>{
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = p.name + (p.sku ? ' ('+p.sku+')' : '');
+    sel.appendChild(opt);
+  });
+  // Add manual option
+  const m = document.createElement('option');
+  m.value = 'manual'; m.textContent = '✏️ Enter manually';
+  sel.appendChild(m);
+}
+
+function onProductSelect(){
+  const val = document.getElementById('f-product').value;
+  if(val===''||val==='manual'){
+    document.getElementById('f-sku').value='';
+    document.getElementById('f-asin').value='';
+    document.getElementById('f-price').value='';
+    return;
+  }
+  const p = allProducts[parseInt(val)];
+  if(p){
+    document.getElementById('f-sku').value  = p.sku||'';
+    document.getElementById('f-asin').value = p.asin||'';
+    if(p.mrp) document.getElementById('f-price').value = p.mrp;
   }
 }
 
-// ── Append new order ──────────────────────────────────
-async function appendToSheet(row) {
-  await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}!A:O:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, 'POST', {
-    values: [row]
-  });
+// ── Add Product ───────────────────────────────────────
+async function addProduct(){
+  const name = document.getElementById('p-name').value.trim();
+  const sku  = document.getElementById('p-sku').value.trim();
+  const asin = document.getElementById('p-asin').value.trim();
+  const mrp  = document.getElementById('p-mrp').value.trim();
+  const cat  = document.getElementById('p-category').value.trim();
+  if(!name||!sku){ showToast('Item name and SKU are required','error'); return; }
+  if(!accessToken){ showToast('Please connect Google Sheets first','info'); return; }
+  const btn = document.getElementById('add-product-btn');
+  btn.disabled=true; btn.textContent='⏳ Saving…';
+  try{
+    await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${PRODUCTS_SHEET}!A:E:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,'POST',{values:[[name,sku,asin,mrp,cat]]});
+    showToast('✅ Product saved!','success');
+    ['p-name','p-sku','p-asin','p-mrp','p-category'].forEach(id=>document.getElementById(id).value='');
+    await loadProducts();
+  }catch(e){ showToast('Error: '+e.message,'error'); }
+  btn.disabled=false; btn.textContent='➕ Save product to Sheet';
 }
 
-// ── Generic fetch helper ──────────────────────────────
-async function gFetch(url, method='GET', body=null) {
-  const opts = { method, headers: { Authorization: 'Bearer ' + accessToken, 'Content-Type': 'application/json' } };
-  if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(url, opts);
-  if (!res.ok) throw new Error(await res.text());
-  return res.json();
+// ── Delete Product ────────────────────────────────────
+async function deleteProduct(rowIndex){
+  if(!confirm('Delete this product?')) return;
+  try{
+    const meta = await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}`);
+    const sheet = meta.sheets.find(s=>s.properties.title===PRODUCTS_SHEET);
+    const sheetId = sheet.properties.sheetId;
+    await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}:batchUpdate`,'POST',{
+      requests:[{deleteDimension:{range:{sheetId,dimension:'ROWS',startIndex:rowIndex,endIndex:rowIndex+1}}}]
+    });
+    showToast('Product deleted','info');
+    await loadProducts();
+  }catch(e){ showToast('Error: '+e.message,'error'); }
 }
 
-// ── Submit order ──────────────────────────────────────
-async function submitOrder() {
+// ── Render Products ───────────────────────────────────
+function renderProducts(list){
+  if(!list.length){
+    document.getElementById('products-tbody').innerHTML='<tr class="loading-row"><td colspan="6">No products yet — add one above</td></tr>';
+    document.getElementById('products-count').textContent='';
+    return;
+  }
+  document.getElementById('products-tbody').innerHTML = list.map((p,i)=>`<tr>
+    <td title="${p.name}">${p.name}</td>
+    <td>${p.sku}</td><td>${p.asin||'—'}</td>
+    <td>${p.mrp ? '₹'+parseFloat(p.mrp).toLocaleString('en-IN') : '—'}</td>
+    <td>${p.category||'—'}</td>
+    <td><button class="btn-danger" onclick="deleteProduct(${i+1})">🗑 Delete</button></td>
+  </tr>`).join('');
+  document.getElementById('products-count').textContent=`${list.length} product${list.length!==1?'s':''}`;
+}
+
+function filterProducts(){
+  const q = document.getElementById('prod-filter').value.toLowerCase();
+  displayProducts = allProducts.filter(p=>!q||p.name.toLowerCase().includes(q)||p.sku.toLowerCase().includes(q)||p.asin.toLowerCase().includes(q));
+  renderProducts(displayProducts);
+}
+
+// ── Submit Order ──────────────────────────────────────
+async function submitOrder(){
   const oid    = document.getElementById('f-orderid').value.trim();
   const date   = document.getElementById('f-date').value;
   const status = document.getElementById('f-status').value;
-  const sku    = document.getElementById('f-sku').value;
-  const qty    = parseInt(document.getElementById('f-qty').value) || 0;
-  const price  = parseFloat(document.getElementById('f-price').value) || 0;
+  const sku    = document.getElementById('f-sku').value.trim();
+  const qty    = parseInt(document.getElementById('f-qty').value)||0;
+  const price  = parseFloat(document.getElementById('f-price').value)||0;
   const city   = document.getElementById('f-city').value.trim().toUpperCase();
   const state  = document.getElementById('f-state').value;
-  if (!oid||!date||!status||!sku||!city||!state) { showToast('Please fill all required fields (*)', 'error'); return; }
-  if (!accessToken) { showToast('Please connect Google Sheets first', 'info'); return; }
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true; btn.textContent = '⏳ Saving…';
-  document.getElementById('form-status').textContent = 'Writing to Google Sheets…';
-  try {
-    const row = [
-      oid, date, status,
+  const pval   = document.getElementById('f-product').value;
+  const itemname = pval!==''&&pval!=='manual' ? allProducts[parseInt(pval)]?.name||'' : '';
+  if(!oid||!date||!status||!sku||!city||!state){ showToast('Please fill all required fields (*)','error'); return; }
+  if(!accessToken){ showToast('Please connect Google Sheets first','info'); return; }
+  const btn=document.getElementById('submit-btn');
+  btn.disabled=true; btn.textContent='⏳ Saving…';
+  document.getElementById('form-status').textContent='Writing to Google Sheets…';
+  try{
+    const row=[
+      oid,date,status,
       document.getElementById('f-service').value,
-      sku,
+      itemname,sku,
       document.getElementById('f-asin').value.trim(),
-      qty, price,
-      parseFloat(document.getElementById('f-tax').value) || 0,
-      city, state,
+      qty,price,
+      parseFloat(document.getElementById('f-tax').value)||0,
+      city,state,
       document.getElementById('f-postal').value.trim(),
       document.getElementById('f-channel').value,
       document.getElementById('f-biz').value,
-      parseFloat(document.getElementById('f-promo').value) || 0
+      parseFloat(document.getElementById('f-promo').value)||0
     ];
-    await appendToSheet(row);
-    showToast('✅ Order saved to Google Sheets!', 'success');
-    document.getElementById('form-status').textContent = '';
+    await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${ORDERS_SHEET}!A:P:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,'POST',{values:[row]});
+    showToast('✅ Order saved to Google Sheets!','success');
+    document.getElementById('form-status').textContent='';
     resetForm();
     await loadFromSheets();
-  } catch(e) {
-    showToast('Error saving: ' + e.message, 'error');
-    document.getElementById('form-status').textContent = '';
-  }
-  btn.disabled = false; btn.textContent = '➕ Add order to Google Sheet';
+  }catch(e){ showToast('Error: '+e.message,'error'); document.getElementById('form-status').textContent=''; }
+  btn.disabled=false; btn.textContent='➕ Add order to Google Sheet';
 }
 
-// ── Dashboard update ──────────────────────────────────
-function updateDashboard(orders) {
-  const total = orders.length;
-  const rev = orders.reduce((s,o)=>s+o.price,0);
-  const delivered = orders.filter(o=>o.status.includes('Delivered')).length;
-  const cancelled = orders.filter(o=>o.status==='Cancelled').length;
-  document.getElementById('m-total').textContent = total.toLocaleString('en-IN');
-  document.getElementById('m-revenue').textContent = '₹' + Math.round(rev).toLocaleString('en-IN');
-  document.getElementById('m-delivered').textContent = delivered.toLocaleString('en-IN');
-  document.getElementById('m-cancelled').textContent = cancelled.toLocaleString('en-IN');
-  document.getElementById('m-del-pct').textContent = total ? (delivered/total*100).toFixed(1)+'% of total' : '';
-  document.getElementById('m-can-pct').textContent = total ? (cancelled/total*100).toFixed(1)+'% cancel rate' : '';
-  document.getElementById('m-range').textContent = total ? 'All time' : 'No data yet';
-
-  // Status breakdown
-  const statusMap = {};
+// ── Dashboard ─────────────────────────────────────────
+function updateDashboard(orders){
+  const total=orders.length;
+  const rev=orders.reduce((s,o)=>s+o.price,0);
+  const delivered=orders.filter(o=>o.status.includes('Delivered')).length;
+  const cancelled=orders.filter(o=>o.status==='Cancelled').length;
+  document.getElementById('m-total').textContent=total.toLocaleString('en-IN');
+  document.getElementById('m-revenue').textContent='₹'+Math.round(rev).toLocaleString('en-IN');
+  document.getElementById('m-delivered').textContent=delivered.toLocaleString('en-IN');
+  document.getElementById('m-cancelled').textContent=cancelled.toLocaleString('en-IN');
+  document.getElementById('m-del-pct').textContent=total?(delivered/total*100).toFixed(1)+'% of total':'';
+  document.getElementById('m-can-pct').textContent=total?(cancelled/total*100).toFixed(1)+'% cancel rate':'';
+  document.getElementById('m-range').textContent=total?'All time':'No data yet';
+  const statusMap={};
   orders.forEach(o=>{ statusMap[o.status]=(statusMap[o.status]||0)+1; });
-  const statusColors = {
-    'Shipped - Delivered to Buyer':'#e8f5e2:#2e6b12',
-    'Cancelled':'#fde8e8:#8a2020',
-    'Shipped - Picked Up':'#e3eef9:#1a4f8a',
-    'Shipped - Returned to Seller':'#edeafd:#42348a',
-    'Pending - Waiting for Pick Up':'#fef3e2:#7a4b10',
-    'Shipped - Returning to Seller':'#fef3e2:#7a4b10',
-    'Pending':'#fef3e2:#7a4b10',
-  };
-  const statusLabels = {'Shipped - Delivered to Buyer':'Delivered','Shipped - Picked Up':'Picked up','Shipped - Returned to Seller':'Returned to seller','Shipped - Returning to Seller':'Returning','Pending - Waiting for Pick Up':'Waiting pickup'};
-  const sg = document.getElementById('status-grid');
-  const sorted = Object.entries(statusMap).sort((a,b)=>b[1]-a[1]);
-  sg.innerHTML = sorted.map(([s,c])=>{
-    const [bg,clr] = (statusColors[s]||'#f5f5f3:#888').split(':');
-    return `<div class="status-pill" style="background:${bg}"><span style="color:${clr};font-weight:600">${statusLabels[s]||s}</span><span style="color:${clr};font-weight:600">${c.toLocaleString('en-IN')}</span></div>`;
+  const statusColors={'Shipped - Delivered to Buyer':'#e8f5e2:#2e6b12','Cancelled':'#fde8e8:#8a2020','Shipped - Picked Up':'#e3eef9:#1a4f8a','Shipped - Returned to Seller':'#edeafd:#42348a','Pending - Waiting for Pick Up':'#fef3e2:#7a4b10','Shipped - Returning to Seller':'#fef3e2:#7a4b10','Pending':'#fef3e2:#7a4b10'};
+  const statusLabels={'Shipped - Delivered to Buyer':'Delivered','Shipped - Picked Up':'Picked up','Shipped - Returned to Seller':'Returned to seller','Shipped - Returning to Seller':'Returning','Pending - Waiting for Pick Up':'Waiting pickup'};
+  document.getElementById('status-grid').innerHTML=Object.entries(statusMap).sort((a,b)=>b[1]-a[1]).map(([s,c])=>{
+    const[bg,clr]=(statusColors[s]||'#f5f5f3:#888').split(':');
+    return`<div class="status-pill" style="background:${bg}"><span style="color:${clr};font-weight:600">${statusLabels[s]||s}</span><span style="color:${clr};font-weight:600">${c.toLocaleString('en-IN')}</span></div>`;
   }).join('');
-
-  // Monthly revenue
-  const monthly = {};
-  orders.forEach(o=>{
-    if(!o.date||!o.price) return;
-    const m = o.date.substring(0,7);
-    monthly[m] = (monthly[m]||0) + o.price;
-  });
-  const mLabels = Object.keys(monthly).sort();
-  const mVals = mLabels.map(m=>Math.round(monthly[m]));
-  updateChart('chart-monthly','bar',{labels:mLabels,datasets:[{label:'Revenue',data:mVals,backgroundColor:'#185fa5',borderRadius:4,borderSkipped:false}]},{ scales:{x:{grid:{display:false},ticks:{font:{size:10},color:'#aaa',maxRotation:30}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',font:{size:10},color:'#aaa'},grid:{color:'rgba(0,0,0,0.05)'}}} });
-
-  // Top states
-  const stateMap = {};
-  orders.forEach(o=>{ if(o.state&&o.price) stateMap[o.state]=(stateMap[o.state]||0)+o.price; });
-  const topStates = Object.entries(stateMap).sort((a,b)=>b[1]-a[1]).slice(0,8);
-  updateChart('chart-states','bar',{labels:topStates.map(s=>s[0].substring(0,10)),datasets:[{label:'Revenue',data:topStates.map(s=>Math.round(s[1])),backgroundColor:'#5dcaa5',borderRadius:3}]},{ scales:{x:{grid:{display:false},ticks:{font:{size:9},color:'#aaa',maxRotation:30}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',font:{size:10},color:'#aaa'},grid:{color:'rgba(0,0,0,0.05)'}}} });
-
-  // Top SKUs
-  const skuMap = {};
-  orders.forEach(o=>{ if(o.sku&&o.price) skuMap[o.sku]=(skuMap[o.sku]||0)+o.price; });
-  const topSkus = Object.entries(skuMap).sort((a,b)=>b[1]-a[1]).slice(0,8);
-  const skuColors = ['#185fa5','#0f6e56','#993c1d','#534ab7','#3b6d11','#993556','#854f0b','#a32d2d'];
-  document.getElementById('sku-legend').innerHTML = topSkus.map((s,i)=>`<span><span class="legend-dot" style="background:${skuColors[i]}"></span>${s[0]}</span>`).join('');
-  updateChart('chart-sku','bar',{labels:topSkus.map(s=>s[0]),datasets:[{label:'Revenue',data:topSkus.map(s=>Math.round(s[1])),backgroundColor:skuColors.slice(0,topSkus.length),borderRadius:3}]},{ scales:{x:{grid:{display:false},ticks:{font:{size:9},color:'#aaa',maxRotation:30}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',font:{size:10},color:'#aaa'},grid:{color:'rgba(0,0,0,0.05)'}}} });
+  const monthly={};
+  orders.forEach(o=>{ if(o.date&&o.price){const m=o.date.substring(0,7);monthly[m]=(monthly[m]||0)+o.price;} });
+  const mL=Object.keys(monthly).sort();
+  updateChart('chart-monthly','bar',{labels:mL,datasets:[{label:'Revenue',data:mL.map(m=>Math.round(monthly[m])),backgroundColor:'#185fa5',borderRadius:4,borderSkipped:false}]},{scales:{x:{grid:{display:false},ticks:{font:{size:10},color:'#aaa',maxRotation:30}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',font:{size:10},color:'#aaa'},grid:{color:'rgba(0,0,0,0.05)'}}}});
+  const stateMap={};
+  orders.forEach(o=>{ if(o.state&&o.price)stateMap[o.state]=(stateMap[o.state]||0)+o.price; });
+  const topStates=Object.entries(stateMap).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  updateChart('chart-states','bar',{labels:topStates.map(s=>s[0].substring(0,10)),datasets:[{label:'Revenue',data:topStates.map(s=>Math.round(s[1])),backgroundColor:'#5dcaa5',borderRadius:3}]},{scales:{x:{grid:{display:false},ticks:{font:{size:9},color:'#aaa',maxRotation:30}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',font:{size:10},color:'#aaa'},grid:{color:'rgba(0,0,0,0.05)'}}}});
+  const skuMap={};
+  orders.forEach(o=>{ if(o.sku&&o.price)skuMap[o.sku]=(skuMap[o.sku]||0)+o.price; });
+  const topSkus=Object.entries(skuMap).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const skuColors=['#185fa5','#0f6e56','#993c1d','#534ab7','#3b6d11','#993556','#854f0b','#a32d2d'];
+  document.getElementById('sku-legend').innerHTML=topSkus.map((s,i)=>`<span><span class="legend-dot" style="background:${skuColors[i]}"></span>${s[0]}</span>`).join('');
+  updateChart('chart-sku','bar',{labels:topSkus.map(s=>s[0]),datasets:[{label:'Revenue',data:topSkus.map(s=>Math.round(s[1])),backgroundColor:skuColors.slice(0,topSkus.length),borderRadius:3}]},{scales:{x:{grid:{display:false},ticks:{font:{size:9},color:'#aaa',maxRotation:30}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',font:{size:10},color:'#aaa'},grid:{color:'rgba(0,0,0,0.05)'}}}});
 }
 
-function updateChart(id, type, data, extraOpts={}) {
-  if (charts[id]) charts[id].destroy();
-  charts[id] = new Chart(document.getElementById(id), {
-    type, data,
-    options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, ...extraOpts }
-  });
+function updateChart(id,type,data,extraOpts={}){
+  if(charts[id])charts[id].destroy();
+  charts[id]=new Chart(document.getElementById(id),{type,data,options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},...extraOpts}});
 }
 
 // ── Orders table ──────────────────────────────────────
@@ -467,10 +564,12 @@ function getBadge(s){
   return'<span class="badge b-pen">Pending</span>';
 }
 function renderOrders(list){
-  if(!list.length){ document.getElementById('orders-tbody').innerHTML='<tr class="loading-row"><td colspan="8">No orders found</td></tr>'; document.getElementById('orders-count').textContent=''; return; }
+  if(!list.length){document.getElementById('orders-tbody').innerHTML='<tr class="loading-row"><td colspan="9">No orders found</td></tr>';document.getElementById('orders-count').textContent='';return;}
   document.getElementById('orders-tbody').innerHTML=list.slice(0,100).map(o=>`<tr>
     <td title="${o.id}">${o.id}</td><td>${o.date}</td><td>${getBadge(o.status)}</td>
-    <td title="${o.sku}">${o.sku}</td><td>${o.qty}</td><td>₹${o.price.toLocaleString('en-IN')}</td>
+    <td title="${o.itemname}">${o.itemname||'—'}</td>
+    <td title="${o.sku}">${o.sku}</td><td>${o.qty}</td>
+    <td>₹${o.price.toLocaleString('en-IN')}</td>
     <td title="${o.city}">${o.city}</td><td title="${o.state}">${o.state}</td></tr>`).join('');
   document.getElementById('orders-count').textContent=`Showing ${Math.min(list.length,100)} of ${list.length} orders`;
 }
@@ -478,7 +577,7 @@ function filterOrders(){
   const q=document.getElementById('filter-input').value.toLowerCase();
   const s=document.getElementById('filter-status').value;
   displayOrders=allOrders.filter(o=>{
-    const mq=!q||o.id.toLowerCase().includes(q)||o.sku.toLowerCase().includes(q)||o.city.toLowerCase().includes(q)||o.state.toLowerCase().includes(q);
+    const mq=!q||o.id.toLowerCase().includes(q)||o.sku.toLowerCase().includes(q)||o.city.toLowerCase().includes(q)||o.state.toLowerCase().includes(q)||(o.itemname&&o.itemname.toLowerCase().includes(q));
     return mq&&(!s||o.status===s);
   });
   renderOrders(displayOrders);
@@ -488,23 +587,33 @@ function filterOrders(){
 function switchTab(name){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  const map={dashboard:0,orders:1,entry:2};
+  const map={dashboard:0,orders:1,entry:2,products:3};
   document.querySelectorAll('.tab')[map[name]].classList.add('active');
   document.querySelectorAll('.panel')[map[name]].classList.add('active');
-  if(name==='orders') renderOrders(displayOrders);
+  if(name==='orders')renderOrders(displayOrders);
+  if(name==='products')renderProducts(displayProducts);
 }
 
-// ── Toast ──────────────────────────────────────────────
-function showToast(msg, type='info'){
+// ── Toast ─────────────────────────────────────────────
+function showToast(msg,type='info'){
   const t=document.getElementById('toast');
-  t.textContent=msg; t.className='toast '+type; t.style.display='block';
+  t.textContent=msg;t.className='toast '+type;t.style.display='block';
   setTimeout(()=>t.style.display='none',3500);
 }
 
-// ── Reset ──────────────────────────────────────────────
+// ── Fetch helper ──────────────────────────────────────
+async function gFetch(url,method='GET',body=null){
+  const opts={method,headers:{Authorization:'Bearer '+accessToken,'Content-Type':'application/json'}};
+  if(body)opts.body=JSON.stringify(body);
+  const res=await fetch(url,opts);
+  if(!res.ok)throw new Error(await res.text());
+  return res.json();
+}
+
+// ── Reset form ────────────────────────────────────────
 function resetForm(){
-  ['f-orderid','f-asin','f-city','f-postal','f-promo','f-price','f-tax'].forEach(id=>document.getElementById(id).value='');
-  ['f-status','f-sku','f-service','f-state'].forEach(id=>document.getElementById(id).selectedIndex=0);
+  ['f-orderid','f-sku','f-asin','f-city','f-postal','f-promo','f-price','f-tax'].forEach(id=>document.getElementById(id).value='');
+  ['f-status','f-service','f-state','f-product'].forEach(id=>document.getElementById(id).selectedIndex=0);
   document.getElementById('f-qty').value=1;
   document.getElementById('f-date').valueAsDate=new Date();
 }
